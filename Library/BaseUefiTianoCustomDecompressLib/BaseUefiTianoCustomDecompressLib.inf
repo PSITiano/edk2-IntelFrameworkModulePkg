@@ -20,10 +20,11 @@
   FILE_GUID                      = d774c4d9-c121-4da3-a5e2-0f317e3c630c
   MODULE_TYPE                    = BASE
   VERSION_STRING                 = 1.0
-  LIBRARY_CLASS                  = CustomDecompressLib
   LIBRARY_CLASS                  = UefiDecompressLib
   EDK_RELEASE_VERSION            = 0x00020000
   EFI_SPECIFICATION_VERSION      = 0x00020000
+
+  CONSTRUCTOR                    = TianoDecompressLibConstructor
 
 #
 # The following information is for reference only and not required by the build tools.
@@ -35,14 +36,13 @@
   BaseUefiTianoCustomDecompressLibInternals.h
   BaseUefiTianoCustomDecompressLib.c
 
-
 [Packages]
   MdePkg/MdePkg.dec
   IntelFrameworkModulePkg/IntelFrameworkModulePkg.dec
 
 [LibraryClasses]
-  BaseMemoryLib
   DebugLib
+  ExtractGuidedSectionLib
 
 [Guids]
   gTianoCustomDecompressGuid 
